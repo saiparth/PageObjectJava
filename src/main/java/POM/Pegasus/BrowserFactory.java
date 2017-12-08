@@ -15,8 +15,7 @@ public class BrowserFactory {
 	@Test
 	public static void etster(String browser) {
 		WebDriver wd = null;
-		switch (browser.toLowerCase()) 
-		{
+		switch (browser.toLowerCase()) {
 		case "chrome":
 			wd = new ChromeDriver();
 			wd.manage().window().maximize();
@@ -28,6 +27,6 @@ public class BrowserFactory {
 			wd = new ChromeDriver();
 			break;
 		}
-		
+
 	}
 }
