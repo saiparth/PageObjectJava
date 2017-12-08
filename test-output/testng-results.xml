@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suites" duration-ms="17024" started-at="2017-12-08T16:19:39Z" finished-at="2017-12-08T16:19:56Z">
+    <groups>
+    </groups>
+    <test name="Firefox" duration-ms="16736" started-at="2017-12-08T16:19:39Z" finished-at="2017-12-08T16:19:55Z">
+      <class name="POM.Pegasus.BrowserFactory">
+        <test-method status="PASS" signature="etster(java.lang.String)[pri:0, instance:POM.Pegasus.BrowserFactory@1bce4f0a]" name="etster" duration-ms="16584" started-at="2017-12-08T21:49:39Z" finished-at="2017-12-08T21:49:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- etster -->
+      </class> <!-- POM.Pegasus.BrowserFactory -->
+    </test> <!-- Firefox -->
+    <test name="Chrome" duration-ms="17020" started-at="2017-12-08T16:19:39Z" finished-at="2017-12-08T16:19:56Z">
+      <class name="POM.Pegasus.BrowserFactory">
+        <test-method status="PASS" signature="etster(java.lang.String)[pri:0, instance:POM.Pegasus.BrowserFactory@8bd1b6a]" name="etster" duration-ms="16880" started-at="2017-12-08T21:49:39Z" finished-at="2017-12-08T21:49:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- etster -->
+      </class> <!-- POM.Pegasus.BrowserFactory -->
+    </test> <!-- Chrome -->
+    <test name="IE" duration-ms="16888" started-at="2017-12-08T16:19:39Z" finished-at="2017-12-08T16:19:56Z">
+      <class name="POM.Pegasus.BrowserFactory">
+        <test-method status="PASS" signature="etster(java.lang.String)[pri:0, instance:POM.Pegasus.BrowserFactory@6a41eaa2]" name="etster" duration-ms="16744" started-at="2017-12-08T21:49:39Z" finished-at="2017-12-08T21:49:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- etster -->
+      </class> <!-- POM.Pegasus.BrowserFactory -->
+    </test> <!-- IE -->
+  </suite> <!-- Suites -->
+</testng-results>
