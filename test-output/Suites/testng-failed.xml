@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Suites]" parallel="tests">
-  <test name="IE(failed)" parallel="tests">
-    <parameter name="browser" value="IE"/>
-    <classes>
-      <class name="POM.Pegasus.App">
-        <methods>
-          <include name="etster" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- POM.Pegasus.App -->
-    </classes>
-  </test> <!-- IE(failed) -->
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suites]" parallel="tests">
+  <parameter name="reportPath" value="Firefox"/>
+  <listeners>
+    <listener class-name="POM.Pegasus.TestNgListner"/>
+  </listeners>
   <test name="Firefox(failed)" parallel="tests">
-    <parameter name="browser" value="Firefox"/>
+    <parameter name="browser" value="fireFox"/>
     <classes>
-      <class name="POM.Pegasus.App">
+      <class name="POM.Pegasus.TestSelenium">
         <methods>
-          <include name="etster" invocation-numbers="0"/>
+          <include name="browserStarter"/>
+          <include name="tearDown"/>
+          <include name="extent"/>
+          <include name="closeDriver"/>
+          <include name="TestTabLinkFunction"/>
         </methods>
-      </class> <!-- POM.Pegasus.App -->
+      </class> <!-- POM.Pegasus.TestSelenium -->
     </classes>
   </test> <!-- Firefox(failed) -->
+  <test name="Chrome(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="POM.Pegasus.TestSelenium">
+        <methods>
+          <include name="browserStarter"/>
+          <include name="tearDown"/>
+          <include name="extent"/>
+          <include name="closeDriver"/>
+          <include name="TestTabLinkFunction"/>
+        </methods>
+      </class> <!-- POM.Pegasus.TestSelenium -->
+    </classes>
+  </test> <!-- Chrome(failed) -->
 </suite> <!-- Failed suite [Suites] -->

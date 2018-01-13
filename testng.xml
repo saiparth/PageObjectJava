@@ -1,26 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suites" parallel="tests" thread-count="3">
-
-  <test name="Chrome">
-  <parameter name="browser" value="chrome"></parameter>
-    <classes>
-      <class name="POM.Pegasus.BrowserFactory"/>
-    </classes>
-  </test> <!-- Test -->
-  
-   <test name="Firefox">
-  <parameter name="browser" value="chrome"></parameter>
-    <classes>
-      <class name="POM.Pegasus.BrowserFactory"/>
-    </classes>
-  </test> 
-  
-  <test name="IE">
-  <parameter name="browser" value="chrome"></parameter>
-    <classes>
-      <class name="POM.Pegasus.BrowserFactory"/>
-    </classes>
-  </test> 
-  
+<suite name="Suites" parallel="tests" thread-count="2">
+<listeners>
+<listener class-name="POM.Pegasus.TestNgListner"></listener>
+</listeners>
+	<test name="Chrome">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="POM.Pegasus.TestSelenium" />
+		</classes>
+	</test> <!-- Test -->
+	<parameter name="reportPath" value="Firefox" />
+	<test name="Firefox">
+		<parameter name="browser" value="fireFox" />
+		<classes>
+			<class name="POM.Pegasus.TestSelenium" />
+		</classes>
+	</test>
 </suite> <!-- Suite -->

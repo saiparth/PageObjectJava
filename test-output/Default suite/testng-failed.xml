@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="POM.Pegasus.BrowserFactory">
+      <class name="POM.Pegasus.Headless">
         <methods>
-          <include name="etster"/>
+          <include name="headless"/>
         </methods>
-      </class> <!-- POM.Pegasus.BrowserFactory -->
+      </class> <!-- POM.Pegasus.Headless -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
