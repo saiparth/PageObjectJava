@@ -31,10 +31,10 @@ public class TestSelenium extends BrowserFactory {
 		driver=wd;
 		driver.get("file:///E:/webs/http___demoqa.com_/demoqa.com/index.html");
 		//driver.get("file:///C:/Users/partha/Desktop/Tryit%20Editor%20v3.5.html");
-		File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		/*File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		Files.copy(f, new File("C:\\Users\\partha\\Desktop\\chiinu.png"));
 		HomePage hp=new HomePage(driver);
-		hp.ClickAndAssertTabFunction();
+		hp.ClickAndAssertTabFunction();*/
 		//driver.quit();
 		/*By up=By.id("myFile");
 		By frame=By.id("iframeResult");

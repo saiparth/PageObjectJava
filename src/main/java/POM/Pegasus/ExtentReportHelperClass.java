@@ -7,26 +7,52 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentReportHelperClass {
     
-    static ExtentReports extent;
+    static ExtentReports ChromeExtent;
+    static ExtentReports FFExtent;
     
-    public static ExtentReports getInstance() {	
-        return extent;
+    public static ExtentReports getChromeInstance() 
+    {	
+        return ChromeExtent;
     }
     
-    public static synchronized ExtentReports createInstance(String fileName) {
+    public static ExtentReports getFFInstance() 
+    {	
+        return FFExtent;
+    }
+    
+    public static synchronized ExtentReports createChromeInstance(String fileName) 
+    {
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
         htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
         htmlReporter.config().setChartVisibilityOnOpen(true);
         htmlReporter.config().setTheme(Theme.STANDARD);
-        htmlReporter.config().setDocumentTitle("Automation Report");
+        htmlReporter.config().setDocumentTitle("Automation Chrome Report");
         htmlReporter.config().setEncoding("utf-8");
         htmlReporter.config().setReportName(fileName);
-        extent = new ExtentReports();
-        extent.attachReporter(htmlReporter);
-        return extent;
+        ChromeExtent = new ExtentReports();
+        ChromeExtent.attachReporter(htmlReporter);
+        return ChromeExtent;
     }
-    public static synchronized void flush() {
-    	getInstance().flush();	
+    public static synchronized ExtentReports createFFInstance(String fileName) 
+    {
+        ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
+        htmlReporter.config().setTestViewChartLocation(ChartLocation.TOP);
+        htmlReporter.config().setChartVisibilityOnOpen(true);
+        htmlReporter.config().setTheme(Theme.STANDARD);
+        htmlReporter.config().setDocumentTitle("Automation FF Report");
+        htmlReporter.config().setEncoding("utf-8");
+        htmlReporter.config().setReportName(fileName);
+        FFExtent = new ExtentReports();
+        FFExtent.attachReporter(htmlReporter);
+        return FFExtent;
+    }
+    public static synchronized void Chromeflush() 
+    {
+    	getChromeInstance().flush();	
+    }
+    public static synchronized void FFflush() 
+    {
+    	getFFInstance().flush();	
     }
 }
 

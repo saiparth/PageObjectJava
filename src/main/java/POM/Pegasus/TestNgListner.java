@@ -1,5 +1,6 @@
 package POM.Pegasus;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.IInvokedMethod;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -10,12 +11,14 @@ public class TestNgListner implements ITestListener{
 
 	@Override
 	public void onFinish(ITestContext context) {
-		
+		//super.onFinish(context);
+		String wd=(String)context.getAttribute("webdriver");
+		 
 	}
 
 	@Override
 	public void onStart(ITestContext context) {
-		
+		context.setAttribute("webdriver",new BrowserFactory().getBrowserName());
 	}
 
 	@Override
@@ -25,27 +28,33 @@ public class TestNgListner implements ITestListener{
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		ExtentTestManage.getTest().fail(result.getName());
+		//if((String)ITestContext.getAttribute("webdriver")=="Chrome")
+		ExtentTestManage.getChromeTest().fail(result.getName());
+		ExtentTestManage.getFFTest().fail(result.getName());
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		ExtentTestManage.getTest().skip(result.getName());
+		ExtentTestManage.getChromeTest().skip(result.getName());
+		ExtentTestManage.getFFTest().skip(result.getName());
 	}
 
 	@Override
 	public void onTestStart(ITestResult result) {
 		String name =result.getName(); //new Object(){}.getClass().getEnclosingMethod().getName();
-		ExtentTestManage.createTest(name); // new
+		ExtentTestManage.createChromeTest(name); // new
+		ExtentTestManage.createFFTest(name); 
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		ExtentTestManage.getTest().pass(result.getName());
+		ExtentTestManage.getChromeTest().pass(result.getName());
+		ExtentTestManage.getFFTest().pass(result.getName());
 	}
 	@AfterMethod
 	public void afterInvocation(IInvokedMethod arg, ITestResult arg1) { 
 	      System.out.println(arg.getTestMethod().getMethodName());
-	      ExtentTestManage.getTest().info(arg1.getMethod().getDescription());
+	      ExtentTestManage.getChromeTest().info(arg1.getMethod().getDescription());
+	      ExtentTestManage.getFFTest().info(arg1.getMethod().getDescription());
 	    }
 }
